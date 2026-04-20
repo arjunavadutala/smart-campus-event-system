@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient min-h-screen">
+
+    <nav class="navbar">
+        <h2 class="brand-title" style="font-size: 1.5rem;">Smart Campus</h2>
+        <div class="nav-links" style="align-items: center;">
+            <a href="/student/events" style="color:white; font-weight: 600;">Upcoming Events</a>
+            <a href="/student/my-registrations">My Registrations</a>
+            <a href="/student/profile">Profile</a>
+            <form th:action="@{/logout}" method="post" style="display:inline;">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container fade-in">
+        <h2 class="mb-4">Upcoming Events</h2>
+
+        <div th:if="${successMessage}" class="alert alert-success mt-3" th:text="${successMessage}"></div>
+        <div th:if="${errorMessage}" class="alert alert-danger mt-3" th:text="${errorMessage}"></div>
+
+        <div class="grid">
+            <div class="event-card" th:each="event : ${events}">
+                <div class="badge" th:text="${event.eventType}">Type</div>
+                <h3 class="event-title mt-3" th:text="${event.title}">Event Title</h3>
+                <p class="event-info mb-3" style="color:var(--text-main);" th:text="${event.description}">Desc</p>
+                
+                <div class="event-info">
+                    <strong>Date:</strong> <span th:text="${event.eventDate}"></span>
+                </div>
+                <div class="event-info">
+                    <strong>Dept:</strong> <span th:text="${event.department}"></span>
+                </div>
+
+                <form th:action="@{/student/events/register/{id}(id=${event.id})}" method="post" class="mt-4">
+                    <button type="submit" class="btn btn-primary w-100">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

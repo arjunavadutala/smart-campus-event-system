@@ -1,0 +1,17 @@
+com\smartcampus\eventsystem\entity\User.class
+com\smartcampus\eventsystem\EventSystemApplication.class
+com\smartcampus\eventsystem\config\DatabaseSeeder.class
+com\smartcampus\eventsystem\entity\Registration.class
+com\smartcampus\eventsystem\repository\RegistrationRepository.class
+com\smartcampus\eventsystem\service\RegistrationService.class
+com\smartcampus\eventsystem\controller\StudentController.class
+com\smartcampus\eventsystem\service\EventService.class
+com\smartcampus\eventsystem\controller\AdminController.class
+com\smartcampus\eventsystem\repository\UserRepository.class
+com\smartcampus\eventsystem\service\UserDetailsServiceImpl.class
+com\smartcampus\eventsystem\exception\GlobalExceptionHandler.class
+com\smartcampus\eventsystem\repository\EventRepository.class
+com\smartcampus\eventsystem\entity\Event.class
+com\smartcampus\eventsystem\service\UserService.class
+com\smartcampus\eventsystem\config\SecurityConfig.class
+com\smartcampus\eventsystem\controller\AuthController.class
